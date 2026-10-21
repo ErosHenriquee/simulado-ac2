@@ -1,0 +1,19 @@
+.tarefa { 
+    color: blue; 
+
+}
+.concluida {
+     text-decoration: underline; 
+}
+
+.removida {
+     color: red; 
+}
+
+.btn-remover {
+     background: orange; 
+}
+
+.btn-concluir { 
+    background: green; color: white; 
+}

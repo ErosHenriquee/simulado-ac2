@@ -1,0 +1,24 @@
+<h2>Lista de Tarefas</h2>
+
+<p>
+  Total: {{ total() }} |
+  Concluídas: {{ concluidas() }} |
+  Pendentes: {{ pendentes() }}
+</p>
+
+@if (tarefas.length == 0) {
+  <p>Nenhuma tarefa cadastrada</p>
+}
+
+@for (t of tarefas; track t.id) {
+  <p class="tarefa"
+     [class.concluida]="t.concluida"
+     [class.removida]="t.removida">
+    {{ t.titulo }} - prazo: {{ t.prazo }}
+
+    <button class="btn-remover" (click)="remover(t)">Remover</button>
+    <button class="btn-concluir" (click)="concluir(t)">Concluir</button>
+  </p>
+}
+
+<a routerLink="/cadastro">Voltar ao cadastro</a>
